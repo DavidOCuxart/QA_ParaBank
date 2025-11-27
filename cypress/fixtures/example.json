@@ -1,0 +1,10 @@
+{
+  "user": {
+    "name": "John",
+    "surName": "Smith",
+    "userName" : "john",
+    "password" : "demo",
+    "id" : "12315"
+  },
+  "url" : "https://parabank.parasoft.com/parabank/index.htm"
+}

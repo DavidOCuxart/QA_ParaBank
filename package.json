@@ -1,0 +1,25 @@
+{
+  "name": "qa_parabank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidOCuxart/QA_ParaBank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidOCuxart/QA_ParaBank/issues"
+  },
+  "homepage": "https://github.com/DavidOCuxart/QA_ParaBank#readme",
+  "dependencies": {
+    "cypress": "^15.7.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0"
+  }
+}
