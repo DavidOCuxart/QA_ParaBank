@@ -1,6 +1,6 @@
-import cypress from "cypress";
-
 class AccountAPI{
+
+
     CreateAccount(customerID, accountType, fundAccount){
         //Array [CHECKING, SAVINGS, LOAN]
         cy.request({

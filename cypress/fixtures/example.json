@@ -6,5 +6,7 @@
     "password" : "demo",
     "id" : "12315"
   },
-  "url" : "https://parabank.parasoft.com/parabank/index.htm"
+  "url" : "https://parabank.parasoft.com/parabank/index.htm",
+  "logInUrl" : "https://parabank.parasoft.com/parabank/login.htm",
+  "loggedUrl" : "https://parabank.parasoft.com/parabank/overview.htm"
 }
