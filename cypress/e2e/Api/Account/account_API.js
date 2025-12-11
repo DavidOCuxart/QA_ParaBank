@@ -1,6 +1,4 @@
 class AccountAPI{
-
-
     CreateAccount(customerID, accountType, fundAccount){
         //Array [CHECKING, SAVINGS, LOAN]
         cy.request({
@@ -47,7 +45,7 @@ class AccountAPI{
         })
     }
 
-    GetAccoundId(accoundID){
+    GetAccoundInformation(accoundID){
         return cy.request({
             method : "GET",
             url : `https://parabank.parasoft.com/parabank/services/bank/accounts/${accoundID}`,

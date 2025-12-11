@@ -1,3 +1,4 @@
+import AccountAPI from "../../Api/Account/account_API";
 import AccountPage from "../../Pages/accountPage";
 import LoginPage from "../../Pages/Loginpage";
 /// <reference types="Cypress" />
@@ -14,19 +15,42 @@ describe("All account actions", () => {
 
     })
 
-    it.only("Open New Checking Account", function(){
-        this.accountPage.listNavigation("Open New Account");
-        this.accountPage.createAccount("CHECKING").then(function(newAcc){
-            this.accountPage.listNavigation("Accounts Overview");
-            this.accountPage.checkIfAccountExist(newAcc);
+    it("Open New Checking Account", function(){
+        this.accountPage.ListNavigation("Open New Account");
+        this.accountPage.CreateAccount("CHECKING").then(function(newAcc){
+            this.accountPage.ListNavigation("Accounts Overview");
+            this.accountPage.CheckIfAccountExist(newAcc);
         })
     })
 
     it("Open New Savings Account", function(){
-
+        this.accountPage.ListNavigation("Open New Account");
+        this.accountPage.CreateAccount("SAVINGS").then(function(newAcc){
+            this.accountPage.ListNavigation("Accounts Overview");
+            this.accountPage.CheckIfAccountExist(newAcc);
+        })   
     })
 
-    it("Transfer Funds", function(){
+    it.only("Transfer Funds", function(){
+    const accountAPI = new AccountAPI();
+    let amount = 100;
+    //const accountPage = this.accountPage;
+    const date = new Date();
+    accountAPI.GetAllAccounts(this.data.user.id).then((accounts) => {
+        const account1Id = accounts[0].id;
+        const account2Id = accounts[1].id;
+
+        this.accountPage.ListNavigation("Transfer Funds");
+
+        //this.accountPage.TransferFunds(account1Id, account2Id, amount);
+        //this.accountPage.VerifyTransReceived(account1Id, date, amount);
+        //this.accountPage.VerifyTransSent(account2Id, date, amount);
+    
+        this.accountPage.ListNavigation("Accounts Overview");
+        this.accountPage.AccountClick(account1Id);
+
+
+    });
 
     })
 
