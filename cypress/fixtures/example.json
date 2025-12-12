@@ -6,6 +6,16 @@
     "password" : "demo",
     "id" : "12212"
   },
+  "billPay":{
+    "payee name" : "Jorge",
+    "address" : "Street of Juz",
+    "city" : "Valencia",
+    "state" : "Catalonia",
+    "zip code" : 89621,
+    "phone" : 412365789,
+    "toAccount": 25478,
+    "amount" : "50"
+  },
   "url" : "https://parabank.parasoft.com/parabank/index.htm",
   "logInUrl" : "https://parabank.parasoft.com/parabank/login.htm",
   "loggedUrl" : "https://parabank.parasoft.com/parabank/overview.htm"
