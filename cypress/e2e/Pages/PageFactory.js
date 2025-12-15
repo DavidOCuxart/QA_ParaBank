@@ -3,6 +3,7 @@ import TransactionPage from "./TransactionPage";
 import Loginpage from "./Loginpage";
 import BillPage from "./BillPage";
 import PageNavigation from "./PageNavigation";
+import ContactInfoPage from "./ContactInfoPage";
 
 class PageFactory{
     static pages = {
@@ -10,7 +11,8 @@ class PageFactory{
         transfer: TransactionPage,
         login: Loginpage,
         bill: BillPage,
-        navigation: PageNavigation
+        navigation: PageNavigation,
+        contactInfo: ContactInfoPage
 
     };
 

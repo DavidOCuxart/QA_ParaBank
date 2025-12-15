@@ -10,7 +10,6 @@ describe("", function(){
 
             this.logInAPI = APIFactory.getPage("login")
             const accountAPI = APIFactory.getPage("account")
-            this.billPage = PageFactory.getPage("bill");
             this.pageNavigation = PageFactory.getPage("navigation");
 
             const user = this.data.user;
@@ -23,9 +22,9 @@ describe("", function(){
     })
 
     it("Bill Pay", function(){
-        this.pageNavigation.billPay();
-        this.billPage.paymentInformation(this.data.billPay, this.accountID);
-        this.billPage.billPay();
+        const billPage = this.pageNavigation.billPay();
+        billPage.paymentInformation(this.data.billPay, this.accountID);
+        billPage.billPay();
 
     })
 

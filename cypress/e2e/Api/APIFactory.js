@@ -8,7 +8,7 @@ class APIFactory{
         login: LogInAPI,
     };
 
-    static getPage(pageType) {
+    static getAPI(pageType) {
         return new this.pages[pageType];
     }
 }

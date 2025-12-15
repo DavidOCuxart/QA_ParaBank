@@ -1,9 +1,6 @@
 /// <reference types="Cypress" />
-
-import PageNavigation from "../../Pages/PageNavigation";
-import AccountAPI from "../../Api/Account/accountAPI";
-import LogInAPI from "../../Api/Account/LogInAPI";
-import TransactionPage from "../../Pages/TransactionPage";
+import PageFactory from "../../Pages/PageFactory";
+import APIFactory from "../../Api/APIFactory";
 
 describe("Transfer Process", function(){
     beforeEach(function(){
@@ -11,10 +8,9 @@ describe("Transfer Process", function(){
             this.data = data;
             const user = this.data.user;
             
-            this.loginPage = new LogInAPI();
-            this.transactionPage = new TransactionPage();
-            this.pageNavigation = new PageNavigation();
-            const accountAPI = new AccountAPI();
+            this.loginPage = APIFactory.getAPI("login");
+            this.pageNavigation = PageFactory.getPage("navigation");
+            const accountAPI = APIFactory.getAPI("account");
 
             this.loginPage.logIn(user.userName, user.password, this.data.logInUrl ,this.data.loggedUrl);
             accountAPI.getAllAccounts(user.id).then((accounts) => {
@@ -29,16 +25,16 @@ describe("Transfer Process", function(){
         let amount = 100;
         this.amount = amount;
                              
-        this.pageNavigation.transferFunds();
-        this.transactionPage.transferFunds(this.account1Id, this.account2Id, amount);
+        const transactionPage = this.pageNavigation.transferFunds();
+        transactionPage.transferFunds(this.account1Id, this.account2Id, amount);
     })
 
     it("Verify Transaction", function(){
 
-        this.pageNavigation.accountsOverview();
-        this.transactionPage.verifyTransSent(this.account1Id, date, this.amount);
+        const transactionPage = this.pageNavigation.accountsOverview();
+        transactionPage.verifyTransSent(this.account1Id, this.amount);
 
         this.pageNavigation.accountsOverview();
-        this.transactionPage.verifyTransReceived(this.account2Id, date, this.amount);
+        transactionPage.verifyTransReceived(this.account2Id, this.amount);
     })
 })
