@@ -1,28 +1,36 @@
 /// <reference types="Cypress" />
 
-import LogInAPI from "../../Api/Account/LogInAPI";
-import BillPay from "../../Pages/BillPage";
-import PageNavigation from "../../Pages/PageNavigation";
+import PageFactory from "../../Pages/PageFactory";
+import APIFactory from "../../Api/APIFactory";
 
 describe("", function(){
     beforeEach(function(){
         cy.fixture("example.json").then(function(data){
             this.data = data;
-            this.loginAPI = new LogInAPI();            
-            this.pageNavigation = new PageNavigation();
-            this.BillPay = new BillPay;
+
+            this.logInAPI = APIFactory.getPage("login")
+            const accountAPI = APIFactory.getPage("account")
+            this.billPage = PageFactory.getPage("bill");
+            this.pageNavigation = PageFactory.getPage("navigation");
 
             const user = this.data.user;
-            this.loginAPI.logIn(user.userName, user.password, this.data.logInUrl ,this.data.loggedUrl);
+            this.logInAPI.logIn(user.userName, user.password, this.data.logInUrl ,this.data.loggedUrl);
+
             accountAPI.getAllAccounts(user.id).then((accounts) => {
-                this.account1Id = accounts[0].id;
-                this.account2Id = accounts[1].id;
+                this.accountID = accounts[0].id;
             });
         })
     })
 
     it("Bill Pay", function(){
         this.pageNavigation.billPay();
-        this.billPay.PaymentInformation(this.data.billPay);
+        this.billPage.paymentInformation(this.data.billPay, this.accountID);
+        this.billPage.billPay();
+
+    })
+
+    it("Payment Verification", function(){
+        this.pageNavigation.accountsOverview();
+        this.billPage.verifyPayment(this.accountID, this.data.billPay);
     })
 })

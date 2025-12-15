@@ -34,7 +34,6 @@ describe("Transfer Process", function(){
     })
 
     it("Verify Transaction", function(){
-        const date = new Date();
 
         this.pageNavigation.accountsOverview();
         this.transactionPage.verifyTransSent(this.account1Id, date, this.amount);

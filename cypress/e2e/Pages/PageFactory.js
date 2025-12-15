@@ -1,17 +1,21 @@
+import AccountPage from "./AccountPage";
+import TransactionPage from "./TransactionPage";
+import Loginpage from "./Loginpage";
+import BillPage from "./BillPage";
+import PageNavigation from "./PageNavigation";
+
 class PageFactory{
     static pages = {
         account: AccountPage,
-        transfer: TransferPage,
-        login: Loginpage
+        transfer: TransactionPage,
+        login: Loginpage,
+        bill: BillPage,
+        navigation: PageNavigation
+
     };
 
     static getPage(pageType) {
-        const PageClass = this.pages[pageType];
-        if (PageClass) {
-            return new PageClass();
-        } else {
-            throw new Error('Unknown page type');
-        }
+        return new this.pages[pageType];
     }
 }
 
