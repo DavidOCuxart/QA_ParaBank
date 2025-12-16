@@ -19,6 +19,7 @@ describe("", function(){
                 this.accountID = accounts[0].id;
             });
         })
+        cy.goToUrl(loggedUrl);
     })
 
     it("Bill Pay", function(){

@@ -13,7 +13,7 @@ class PageNavigation{
 
     transferFunds(){
         cy.get("#leftPanel ul li").contains("Transfer Funds").click()
-        return PageFactory.getPage("transfer");
+        return PageFactory.getPage("transaction");
     }
 
     billPay(){

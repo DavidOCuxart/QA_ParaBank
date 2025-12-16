@@ -8,7 +8,7 @@ import ContactInfoPage from "./ContactInfoPage";
 class PageFactory{
     static pages = {
         account: AccountPage,
-        transfer: TransactionPage,
+        transaction: TransactionPage,
         login: Loginpage,
         bill: BillPage,
         navigation: PageNavigation,

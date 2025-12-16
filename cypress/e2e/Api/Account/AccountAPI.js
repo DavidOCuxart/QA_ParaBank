@@ -1,15 +1,9 @@
 class AccountAPI{
     createAccount(customerID, accountType, fundAccount){
-        //Array [CHECKING, SAVINGS, LOAN]
         return cy.request({
             method : "POST",
-            url : `https://parabank.parasoft.com/parabank/services/bank/createAccount`,
-            headers : {"Content-Type" : "application/json", "Accept" : "application/json"},
-            body : {
-                customerId : customerID,
-                newAccountType : accountType,
-                fromAccountId : fundAccount
-            }
+            url : `https://parabank.parasoft.com/parabank/services/bank/createAccount?customerId=${customerID}&newAccountType=${accountType}&fromAccountId=${fundAccount}`,
+            headers : { "Accept" : "application/json"}
         })
     }
 

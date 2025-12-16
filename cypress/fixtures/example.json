@@ -1,15 +1,17 @@
 {
   "user": {
-    "name": "John",
-    "surName": "Smith",
-    "address" : "1431 Main St",
-    "city" : "Beverly Hills",
-    "state" : "CA",
-    "zipCode" : "90210",
-    "phoneNumber" : "310-447-4121",
     "userName" : "john",
     "password" : "demo",
-    "id" : "12212"
+    "id" : "12212",
+    "accountInf" : [
+      "John",
+      "Smith",
+      "1431 Main St",
+      "Beverly Hills",
+      "CA",
+      "90210",
+      "310-447-4121"
+    ]
   },
   "billPay":{
     "payee name" : "Jorge",
@@ -21,7 +23,7 @@
     "toAccount": 25478,
     "amount" : "50"
   },
-  "url" : "https://parabank.parasoft.com/parabank/index.htm",
-  "logInUrl" : "https://parabank.parasoft.com/parabank/login.htm",
-  "loggedUrl" : "https://parabank.parasoft.com/parabank/overview.htm"
+  "url" : "https://parabank.parasoft.com/parabank/index.htm", 
+  "loggedUrl" : "https://parabank.parasoft.com/parabank/overview.htm",
+  "logInUrl" : "https://parabank.parasoft.com/parabank/login.htm"
 }

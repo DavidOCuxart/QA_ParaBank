@@ -1,7 +1,7 @@
 class AccountPage{
-    createAccount(accountType){
+    createAccount(accountType, fromAcc){
         cy.get("#type").select(accountType)
-        cy.get("#fromAccountId").select("13344")
+        cy.get("#fromAccountId").select(fromAcc.toString())
         cy.get('[value="Open New Account"]').click()
         return cy.get('#newAccountId')
             .should('be.visible')
@@ -14,12 +14,12 @@ class AccountPage{
         .contains(account).click();
     }
 
-    createSavingsAccount(){
-        return this.createAccount("SAVINGS");
+    createSavingsAccount(acc){
+        return this.createAccount("SAVINGS", acc);
     }
 
-    createCheckingAccount(){
-        return this.createAccount("CHECKING");
+    createCheckingAccount(acc){
+        return this.createAccount("CHECKING", acc);
     }
 
     checkIfAccountExist(account){

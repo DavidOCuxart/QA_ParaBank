@@ -1,6 +1,6 @@
 class LogInAPI{
     logIn(userName, password, logInUrl, url){
-        cy.request({
+        return cy.request({
             method : "POST",
             url : logInUrl,
             form : true,

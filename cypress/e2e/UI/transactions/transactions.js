@@ -18,7 +18,6 @@ describe("Transfer Process", function(){
                 this.account2Id = accounts[1].id;
             });
         })
-
     })
 
     it("Transaction", function(){
@@ -30,8 +29,8 @@ describe("Transfer Process", function(){
     })
 
     it("Verify Transaction", function(){
-
-        const transactionPage = this.pageNavigation.accountsOverview();
+        this.pageNavigation.accountsOverview();
+        const transactionPage = PageFactory.getPage("transaction")
         transactionPage.verifyTransSent(this.account1Id, this.amount);
 
         this.pageNavigation.accountsOverview();
