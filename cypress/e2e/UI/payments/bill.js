@@ -8,8 +8,8 @@ describe("", function(){
         cy.fixture("example.json").then(function(data){
             this.data = data;
 
-            this.logInAPI = APIFactory.getPage("login")
-            const accountAPI = APIFactory.getPage("account")
+            this.logInAPI = APIFactory.getAPI("login")
+            const accountAPI = APIFactory.getAPI("account")
             this.pageNavigation = PageFactory.getPage("navigation");
 
             const user = this.data.user;
@@ -19,7 +19,6 @@ describe("", function(){
                 this.accountID = accounts[0].id;
             });
         })
-        cy.goToUrl(loggedUrl);
     })
 
     it("Bill Pay", function(){
@@ -31,6 +30,7 @@ describe("", function(){
 
     it("Payment Verification", function(){
         this.pageNavigation.accountsOverview();
+        this.billPage = PageFactory.getPage("bill");
         this.billPage.verifyPayment(this.accountID, this.data.billPay);
     })
 })

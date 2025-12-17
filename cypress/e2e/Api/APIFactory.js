@@ -1,11 +1,15 @@
 
 import AccountAPI from "./Account/accountAPI";
-import LogInAPI from "./Account/LogInAPI";
+import BillAPI from "./Account/BillAPI";
+import LogInAPI from "./Misc/LogInAPI";
+import TransactionsAPI from "./Transactions/TransactionsAPI";
 
 class APIFactory{
     static pages = {
         account: AccountAPI,
         login: LogInAPI,
+        bill: BillAPI,
+        transaction: TransactionsAPI
     };
 
     static getAPI(pageType) {

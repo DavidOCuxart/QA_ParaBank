@@ -12,7 +12,18 @@ class LogInAPI{
             cy.goToUrl(url)
         })
     }
-
+    
+    withdraw(accountID, amount){
+        return cy.request({
+            method : "POST",
+            url : "https://parabank.parasoft.com/parabank/services/bank/withdraw",
+            headers : {"Content-Type" : "application/json"},
+            body : {
+                accountId : accountID,
+                amount : amount
+            }
+        })
+    }
 }
 
 export default LogInAPI;
