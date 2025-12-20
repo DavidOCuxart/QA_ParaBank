@@ -13,7 +13,7 @@ describe("", function(){
             this.pageNavigation = PageFactory.getPage("navigation");
 
             const user = this.data.user;
-            this.logInAPI.logIn(user.userName, user.password, this.data.logInUrl ,this.data.loggedUrl);
+            this.logInAPI.logIn(user.userName, user.password, this.data.logInUrl);
 
             accountAPI.getAllAccounts(user.id).then((accounts) => {
                 this.accountID = accounts[0].id;

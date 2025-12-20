@@ -13,7 +13,7 @@ describe("Update user profile information", function(){
             this.pageNavigation = PageFactory.getPage("navigation");
             
             //this.loginPage.logIn(this.user.userName, this.user.password, data.loggedUrl);
-            this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl ,this.data.loggedUrl);
+            this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl);
         })
     })
 

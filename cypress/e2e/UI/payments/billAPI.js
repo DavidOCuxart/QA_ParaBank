@@ -14,13 +14,12 @@ describe("Test Bill payment via API", function(){
     it("Bill Payment", function(){
         const amount = 100;
         let acc;
-        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl, this.data.loggedUrl).then(() => {
+        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl).then(() => {
             return this.accountAPI.getAllAccounts(this.user.id);
         }).then((accounts) => {
             acc = accounts;
             return this.billAPI.billPay(accounts[0].id, amount);
         }).then((response) => {
-            console.log(response)
             expect(response.body.accountId).to.eq(acc[0].id);
             expect(response.body.amount).to.eq(amount);
             // For some reason the body received from the API is "string" not the actual owner associated with the id account

@@ -16,7 +16,7 @@ class TransactionsAPI{
             headers : {
                 "Accept" : "application/json"
             }
-        }).its("body");
+        }).its("body")
     }
 
     getTransactionsByMonthAndType(accountID, month, transactionType){
@@ -54,13 +54,8 @@ class TransactionsAPI{
     transfer(sourceAccount, targetAccount, amount){
         return cy.request({
             method : "POST",
-            url : "https://parabank.parasoft.com/parabank/services/bank/transfer",
-            headers : {"Content-Type" : "application/json"},
-            body : {
-                fromAccountId : sourceAccount,
-                toAccountId : targetAccount,
-                amount : amount
-            }
+            url : `https://parabank.parasoft.com/parabank/services/bank/transfer?fromAccountId=${sourceAccount}&toAccountId=${targetAccount}&amount=${amount}`,
+            headers : { "Accept" : "application/json"}
         })
     }
 }

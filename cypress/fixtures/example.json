@@ -23,6 +23,9 @@
     "toAccount": 25478,
     "amount" : "50"
   },
+  "transaction":{
+    "amount" : 11
+  },
   "url" : "https://parabank.parasoft.com/parabank/index.htm", 
   "loggedUrl" : "https://parabank.parasoft.com/parabank/overview.htm",
   "logInUrl" : "https://parabank.parasoft.com/parabank/login.htm"

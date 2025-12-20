@@ -12,7 +12,7 @@ describe("Transfer Process", function(){
             this.pageNavigation = PageFactory.getPage("navigation");
             const accountAPI = APIFactory.getAPI("account");
 
-            this.loginPage.logIn(user.userName, user.password, this.data.logInUrl ,this.data.loggedUrl);
+            this.loginPage.logIn(user.userName, user.password, this.data.logInUrl);
             accountAPI.getAllAccounts(user.id).then((accounts) => {
                 this.account1Id = accounts[0].id;
                 this.account2Id = accounts[1].id;

@@ -13,7 +13,7 @@ describe("Accounts Creation", function() {
     it("Create CHECKING account", function() {
         let newAccId;
 
-        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl, this.data.loggedUrl).then((res) => {
+        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl).then((res) => {
             return this.accountAPI.getAllAccounts(this.user.id);
         }).then((accounts) => {
             return this.accountAPI.createAccount(this.user.id, 0, accounts[0].id);
@@ -29,7 +29,7 @@ describe("Accounts Creation", function() {
     it("Create SAVINGS account", function() {
         let newAccId;
 
-        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl, this.data.loggedUrl).then((res) => {
+        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl).then((res) => {
             return this.accountAPI.getAllAccounts(this.user.id);
         }).then((accounts) => {
             const fromAccountId = accounts[0].id;
@@ -46,7 +46,7 @@ describe("Accounts Creation", function() {
     it("Create LOAN account", function() {
         let newAccId;
 
-        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl, this.data.loggedUrl).then((res) => {
+        this.loginAPI.logIn(this.user.userName, this.user.password, this.data.logInUrl).then((res) => {
             return this.accountAPI.getAllAccounts(this.user.id);
         }).then((accounts) => {
             const fromAccountId = accounts[0].id;

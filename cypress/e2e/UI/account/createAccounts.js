@@ -10,7 +10,7 @@ describe("All account actions", () => {
             this.accountAPI = APIFactory.getAPI("account");
             this.pageNavigation = PageFactory.getPage("navigation");
             const user = this.data.user;
-            this.loginAPI.logIn(user.userName, user.password, this.data.logInUrl ,this.data.loggedUrl);
+            this.loginAPI.logIn(user.userName, user.password, this.data.logInUrl);
         })
 
     })

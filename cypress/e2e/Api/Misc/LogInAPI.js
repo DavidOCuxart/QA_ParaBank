@@ -1,5 +1,5 @@
 class LogInAPI{
-    logIn(userName, password, logInUrl, url){
+    logIn(userName, password, logInUrl){
         return cy.request({
             method : "POST",
             url : logInUrl,
@@ -8,8 +8,9 @@ class LogInAPI{
                 username : userName,
                 password : password
             }
-        }).then(() => {
-            cy.goToUrl(url)
+        }).then((res) => {
+            const newUrl = res.redirects[0].split(";")[0].replace("302: ", "");
+            cy.goToUrl(newUrl);
         })
     }
     
