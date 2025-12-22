@@ -25,6 +25,11 @@ class PageNavigation{
         cy.get("#leftPanel ul li").contains("Update Contact Info").click()
         return PageFactory.getPage("contactInfo");
     }
+
+    requestLoan(){
+        cy.get("#leftPanel ul li").contains("Request Loan").click()
+        return PageFactory.getPage("loan");
+    }
 }
 
 export default PageNavigation;

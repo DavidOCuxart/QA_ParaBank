@@ -4,6 +4,7 @@ import Loginpage from "./Loginpage";
 import BillPage from "./BillPage";
 import PageNavigation from "./PageNavigation";
 import ContactInfoPage from "./ContactInfoPage";
+import LoanPage from "./LoanPage";
 
 class PageFactory{
     static pages = {
@@ -12,7 +13,8 @@ class PageFactory{
         login: Loginpage,
         bill: BillPage,
         navigation: PageNavigation,
-        contactInfo: ContactInfoPage
+        contactInfo: ContactInfoPage,
+        loan: LoanPage
 
     };
 

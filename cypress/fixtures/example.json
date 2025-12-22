@@ -26,6 +26,18 @@
   "transaction":{
     "amount" : 11
   },
+  "loan":{
+    "accepted": {
+      "provider" : "Wealth Securities Dynamic Loans (WSDL)",
+      "status" : "Approved",
+      "message" : "Congratulations, your loan has been approved."
+    },
+    "denied": {
+      "provider" : "Wealth Securities Dynamic Loans (WSDL)",
+      "status" : "Denied",
+      "message" : "We cannot grant a loan in that amount with your available funds."
+    }
+  },
   "url" : "https://parabank.parasoft.com/parabank/index.htm", 
   "loggedUrl" : "https://parabank.parasoft.com/parabank/overview.htm",
   "logInUrl" : "https://parabank.parasoft.com/parabank/login.htm"
