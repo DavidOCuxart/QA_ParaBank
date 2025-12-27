@@ -1,4 +1,4 @@
-import { Given, When, Then } from "@cucumber/cucumber";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import PageFactory from "../../../Pages/PageFactory";
 import APIFactory from "../../../Api/APIFactory";
 

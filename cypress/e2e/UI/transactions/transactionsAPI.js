@@ -25,7 +25,6 @@ describe("Transfer money from one account to another", function(){
             destination = accounts[1].id;
             return this.transactionAPI.transfer(source, destination, amount)
         }).then((response) => {
-            console.log(response);
             expect(response.status).to.be.equal(200);
             return this.transactionAPI.getTransactionsByAmount(source, amount)
         }).then((sourceTrans) => {

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/DavidOCuxart/QA_ParaBank#readme",
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
     "cypress": "^15.7.0"
   },
   "devDependencies": {
