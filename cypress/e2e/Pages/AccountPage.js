@@ -29,9 +29,12 @@ class AccountPage{
 
     verifyOperation(amount, text){
         const date = new Date();
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); 
+        
         cy.get("#transactionTable tbody tr:last-child").then(element => {
             const tds = element.find("td");
-            expect(tds.eq(0)).to.contain.text(`${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()}`);
+            expect(tds.eq(0)).to.contain.text(`${month}-${day}-${date.getFullYear()}`);
             expect(tds.eq(1).find("a")).to.contain.text(text);
 
             switch(text){
